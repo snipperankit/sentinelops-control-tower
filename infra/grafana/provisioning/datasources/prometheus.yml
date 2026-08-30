@@ -1,0 +1,15 @@
+# Provisions a Prometheus datasource with a fixed, known UID so
+# mcp/observability/grafana-adapter.ts (and GRAFANA_DATASOURCE_UID in
+# .env.example) can reference it deterministically without any manual
+# Grafana UI setup. See docker-compose.yml's `grafana` service, which
+# mounts this directory to /etc/grafana/provisioning/datasources.
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    uid: prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: false

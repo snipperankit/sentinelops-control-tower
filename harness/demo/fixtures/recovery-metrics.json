@@ -1,0 +1,14 @@
+[
+  {
+    "service": "checkout",
+    "metric": "error_rate",
+    "timestamp": "2026-01-01T01:20:00.000Z",
+    "value": 0.02
+  },
+  {
+    "service": "checkout",
+    "metric": "latency_p95_ms",
+    "timestamp": "2026-01-01T01:20:00.000Z",
+    "value": 830
+  }
+]

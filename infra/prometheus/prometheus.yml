@@ -1,0 +1,12 @@
+# Local-only Prometheus config for the "live" adapter demo stack
+# (see docker-compose.yml's `prometheus` service and README.md's
+# "Local live stack" section). Scrapes itself so the `up` metric queried
+# by mcp/observability/grafana-adapter.ts's default demo query has real
+# data with no additional exporters required.
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]
