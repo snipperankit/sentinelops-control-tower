@@ -1,0 +1,5 @@
+{
+  "service": "checkout",
+  "metric": "error_rate",
+  "note": "Sample read-only snapshot fixture for sandbox diagnostics — not live demo-world state."
+}
