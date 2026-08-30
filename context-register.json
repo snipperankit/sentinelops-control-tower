@@ -1,0 +1,1 @@
+{"data":{"name":"sentinelops-context","manifest":{"type":"remote","name":"sentinelops-context","url":"http://localhost:8804/mcp","description":"Read-only GitHub PR lookup, Bitbucket PR lookup, and web search context tools for the deployment investigator."},"auth_status":{"status":"not_required"}}}

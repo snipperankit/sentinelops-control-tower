@@ -1,0 +1,1 @@
+{"data":[{"name":"sentinelops-deployments","url":"http://localhost:8802/mcp","auth_status":{"status":"not_required"}},{"name":"sentinelops-incidents","url":"http://localhost:8803/mcp","auth_status":{"status":"not_required"}},{"name":"sentinelops-observability","url":"http://localhost:8801/mcp","auth_status":{"status":"not_required"}}]}
