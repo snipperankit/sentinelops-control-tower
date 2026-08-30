@@ -1,0 +1,79 @@
+/* SentinelOps Control Tower — design tokens
+   Instrument-panel aesthetic: near-white surfaces, hairline rules, mono data.
+   Drop this in globally (e.g. src/styles/tokens.css) and import once at the app root. */
+
+:root {
+  /* --- surfaces ------------------------------------------------------- */
+  --so-bg:            #F7F7F5;  /* app canvas */
+  --so-surface:       #FFFFFF;  /* panels, header, rail */
+  --so-surface-sunk:  #FAFAF8;  /* code blocks, inputs, inert chips */
+  --so-surface-chip:  #F4F4F1;  /* neutral badge fill */
+
+  /* --- lines (hairline only, never shadows) --------------------------- */
+  --so-line:          #E5E5E1;  /* panel + section borders */
+  --so-line-soft:     #F0F0EC;  /* rows inside a panel */
+  --so-line-faint:    #F5F5F1;  /* dense table rows */
+  --so-line-strong:   #DCDCD6;  /* chip borders, dividers under emphasis */
+
+  /* --- text ----------------------------------------------------------- */
+  --so-text:          #1A1A1C;  /* headings, primary data */
+  --so-text-body:     #3F3F44;  /* prose */
+  --so-text-muted:    #6B6B70;  /* labels, secondary */
+  --so-text-faint:    #9A9A9F;  /* eyebrows, timestamps */
+  --so-text-ghost:    #C4C4BE;  /* row numbers, em-dashes */
+
+  /* --- accent (actions + focus only) ---------------------------------- */
+  --so-accent:        #2F5AD0;
+  --so-accent-hover:  #1F3F9E;
+  --so-accent-bg:     #EDF1FC;
+  --so-accent-border: #C6D4F5;
+  --so-accent-muted:  #C2CCE6;  /* disabled primary button */
+
+  /* --- semantic state ------------------------------------------------- */
+  --so-ok:            #1F7A4D;  --so-ok-bg:    #E9F5EE;  --so-ok-border:    #CFE7DA;
+  --so-warn:          #A5620A;  --so-warn-bg:  #FBF2E4;  --so-warn-border:  #EEDFC2;
+  --so-danger:        #C0342B;  --so-danger-bg:#FCEDEC;  --so-danger-border:#F3D6D3;
+
+  /* Semantic aliases — use these, not the raw colors, in components. */
+  --so-trusted:       var(--so-ok);
+  --so-untrusted:     var(--so-danger);
+  --so-mutating:      var(--so-warn);
+  --so-readonly:      var(--so-text-muted);
+
+  /* --- type ----------------------------------------------------------- */
+  --so-font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --so-font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --so-fs-eyebrow: 10.5px;  /* mono, uppercase, ls .09em — panel headers */
+  --so-fs-micro:   10px;    /* mono — badges */
+  --so-fs-meta:    11px;    /* mono — timestamps, hashes */
+  --so-fs-data:    12.5px;  /* mono — tool names, ids, values */
+  --so-fs-body:    13.5px;  /* sans — default */
+  --so-fs-lede:    15.5px;  /* sans — proposed-action sentence */
+  --so-fs-h1:      21px;    /* sans 600 — incident title */
+  --so-fs-metric:  17px;    /* mono — header stats */
+  --so-fs-metric-l:26px;    /* mono — rail confidence */
+
+  --so-ls-eyebrow: 0.09em;
+  --so-ls-badge:   0.06em;
+
+  /* --- geometry (spacious density) ------------------------------------ */
+  --so-radius:      4px;   /* panels */
+  --so-radius-sm:   3px;   /* badges, buttons, inputs */
+  --so-header-h:    58px;
+  --so-rail-w:      380px;
+  --so-gutter:      28px;  /* page padding */
+  --so-panel-pad:   18px;
+  --so-panel-gap:   22px;  /* between panels */
+  --so-row-pad-y:   13px;
+  --so-kv-label-w:  152px;
+
+  --so-focus: 0 0 0 3px var(--so-accent-bg);
+}
+
+/* Focus is always visible and always accent — never remove it. */
+:where(button, a, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--so-accent);
+  outline-offset: 1px;
+  border-radius: var(--so-radius-sm);
+}
